@@ -34,7 +34,7 @@ jobs:
       - name: Docker build
         run: |
           docker build \
-            -t ${{ secrets.DOCKER_USER }}/nextjs-app:${{ github.sha }} .
+            -t ${{ secrets.DOCKER_USER }}/mt-front:${{ github.sha }} .
 
       # 6. DockerHub 로그인
       - name: Docker login
