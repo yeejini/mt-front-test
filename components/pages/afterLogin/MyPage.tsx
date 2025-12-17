@@ -11,10 +11,10 @@ import { Suspense, useState } from "react";
 export default function MyPage() {
   const {
     data,
-    isPending,
-    isError,
-  }: { data: IMyPageTypes | undefined; isPending: boolean; isError: boolean } =
-    useMe();
+    isPending, 
+    isError
+  }
+    = useMe();
   const [showDogs, setShowDogs] = useState(false);
   return (
     <div className="bg-white w-full h-full m-auto p-6 rounded-md flex flex-col gap-3 overflow-y-auto">

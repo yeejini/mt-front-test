@@ -1,4 +1,5 @@
-import {UserRoleType} from "@/types/mypage/myPageType";
+// import {UserRoleType} from "@/types/mypage/myPageType";
+import { UserRoleType } from "@/types/common/commonType";
 
 export default function UserBadge({role}: {role: UserRoleType}) {
   const generateClass = (role: UserRoleType) => {
