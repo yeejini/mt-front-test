@@ -5,7 +5,12 @@ import CreateCourseInput from "../CreateCourseInput";
 import CourseTypeBtn from "./common/CourseTypeBtn";
 import CourseCountBtn from "./courseType/CourseCountBtn";
 import {useSessionState} from "@/stores/sessionState";
+<<<<<<< HEAD
 import SessionComp from "./session/SessionComp";
+=======
+import MaxStudents from "./session/MaxStudents";
+import SessionPrice from "./session/SessionPrice";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 
 export default function CourseType() {
   const [isActive, setIsActive] = useState(true);
@@ -24,7 +29,11 @@ export default function CourseType() {
   const handleMultiActive = useCallback(() => {
     multiRef.current?.click();
     setIsActive(false);
+<<<<<<< HEAD
     setCount(1);
+=======
+    setCount(null);
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   }, [setCount]);
 
   const handleCountChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -41,9 +50,15 @@ export default function CourseType() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex flex-col gap-2">
       <h5 className="font-bold">회차 여부</h5>
       <div className="flex justify-between gap-3 *:flex *:items-center *:gap-2 ">
+=======
+    <>
+      <h5 className="font-bold">회차 여부</h5>
+      <div className="flex justify-around *:flex *:items-center *:gap-2">
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         <CourseTypeBtn
           labelFor="type_once"
           labelTxt="일회성 수업"
@@ -71,7 +86,11 @@ export default function CourseType() {
           min={1}
           max={5}
           onChange={handleCountChange}
+<<<<<<< HEAD
           value={isActive ? "1" : count}
+=======
+          value={count ?? ""}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           readOnly={isActive}
           classNames={`${isActive && "text-(--mt-gray)"}`}
         />
@@ -81,7 +100,20 @@ export default function CourseType() {
           plusFn={handleCountPlus}
         />
       </div>
+<<<<<<< HEAD
       <SessionComp count={count!} />
     </div>
+=======
+      <CreateCourseInput name="sessionNo" readOnly />
+      {/* <SessionDate /> */}
+      <CreateCourseInput
+        name="locationDetail"
+        type="text"
+        placeholder="세부 위치"
+      />
+      <MaxStudents inputId="" />
+      <SessionPrice inputId="" />
+    </>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   );
 }

@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { memo } from "react";
+<<<<<<< HEAD
 import { DogIcon } from "@/components/icons/dog";
+=======
+import { UserIcon } from "@/components/icons/user";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 import ErrorMessage from "@/components/shared/feedback/ErrorMessage";
 
 interface DogImageUploaderProps {
@@ -10,10 +14,15 @@ interface DogImageUploaderProps {
   fileInputRef: React.RefObject<HTMLInputElement | null>;
   fileError: string;
   isDisabled: boolean;
+<<<<<<< HEAD
   isDeleted?: boolean;
   onFileSelect: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onButtonClick: () => void;
   onImageDelete?: () => void;
+=======
+  onFileSelect: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onButtonClick: () => void;
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 }
 
 const DogImageUploader = memo(function DogImageUploader({
@@ -23,10 +32,15 @@ const DogImageUploader = memo(function DogImageUploader({
   fileInputRef,
   fileError,
   isDisabled,
+<<<<<<< HEAD
   isDeleted,
   onFileSelect,
   onButtonClick,
   onImageDelete,
+=======
+  onFileSelect,
+  onButtonClick,
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 }: DogImageUploaderProps) {
   const getPlaceholderColor = () => {
     if (dogId !== undefined) {
@@ -35,8 +49,11 @@ const DogImageUploader = memo(function DogImageUploader({
     return "hsl(200, 70%, 80%)";
   };
 
+<<<<<<< HEAD
   const hasImage = previewUrl || (existingImageUrl && !isDeleted);
 
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   return (
     <div className="flex flex-col items-center gap-2">
       {previewUrl ? (
@@ -50,7 +67,11 @@ const DogImageUploader = memo(function DogImageUploader({
             unoptimized
           />
         </div>
+<<<<<<< HEAD
       ) : existingImageUrl && !isDeleted ? (
+=======
+      ) : existingImageUrl ? (
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         <div className="relative size-30 rounded-full overflow-hidden bg-blue-300">
           <Image
             src={existingImageUrl}
@@ -68,7 +89,11 @@ const DogImageUploader = memo(function DogImageUploader({
             backgroundColor: getPlaceholderColor(),
           }}
         >
+<<<<<<< HEAD
           <DogIcon className="size-16 text-white" />
+=======
+          <UserIcon className="size-16 text-white" />
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         </div>
       )}
       <input
@@ -78,6 +103,7 @@ const DogImageUploader = memo(function DogImageUploader({
         onChange={onFileSelect}
         className="hidden"
       />
+<<<<<<< HEAD
       <div className="flex items-center gap-3">
         <button
           type="button"
@@ -100,6 +126,17 @@ const DogImageUploader = memo(function DogImageUploader({
           </button>
         )}
       </div>
+=======
+      <button
+        type="button"
+        onClick={onButtonClick}
+        disabled={isDisabled}
+        className="text-sm text-(--mt-gray) disabled:opacity-50 disabled:cursor-not-allowed"
+        aria-label={previewUrl ? "이미지 변경" : "이미지 선택"}
+      >
+        {previewUrl ? "이미지 변경" : "이미지 선택"}
+      </button>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 
       <ErrorMessage message={fileError} className="w-full text-center" />
     </div>

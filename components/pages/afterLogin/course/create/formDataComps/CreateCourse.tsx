@@ -1,10 +1,17 @@
 "use client";
+<<<<<<< HEAD
 
 import CreateCourseCard from "../CreateCourseCard";
 import CourseTextAtrea from "./common/CourseTextAtrea";
 import CourseDifficulty from "./CourseDifficulty";
 import CourseDogSize from "./CourseDogSize";
 import CourseImage from "./CourseImage";
+=======
+import CreateCourseCard from "../CreateCourseCard";
+import CourseDescription from "./CourseDescription";
+import CourseDifficulty from "./CourseDifficulty";
+import CourseDogSize from "./CourseDogSize";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 import CourseIsFree from "./CourseIsFree";
 import CourseItems from "./CourseItems";
 import CourseLessonForm from "./CourseLessonForm";
@@ -13,6 +20,7 @@ import CourseRefundPolicy from "./CourseRefundPolicy";
 import CourseSchedule from "./CourseSchedule";
 import CourseTitle from "./CourseTitle";
 import CourseType from "./CourseType";
+<<<<<<< HEAD
 import {useSessionState} from "@/stores/sessionState";
 import useCourseUpload from "@/hooks/afterLogin/course/useCourseUpload";
 import {FormEvent} from "react";
@@ -28,10 +36,17 @@ export default function CreateCourse() {
   };
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+=======
+
+export default function CreateCourse() {
+  return (
+    <form className="flex flex-col gap-3">
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       <fieldset className="flex flex-col gap-3">
         <legend className="w-full! h-full! opacity-100! text-center font-bold mb-4 text-xl">
           훈련과정업로드
         </legend>
+<<<<<<< HEAD
 
         <CreateCourseCard>
           <input type="text" name="status" defaultValue="SCHEDULED" hidden />
@@ -75,6 +90,19 @@ export default function CreateCourse() {
             row={5}
             placeholder="대략적인 해당 훈련내용을 작성해주세요."
           />
+=======
+        <CreateCourseCard classNames="[&>label]:font-bold">
+          <CourseTitle />
+          <CourseLocation />
+        </CreateCourseCard>
+        <CreateCourseCard>
+          <div className="flex flex-col gap-2 justify-around *:flex *:gap-2 *:py-2">
+            {/* 유-무료 */}
+            <CourseIsFree />
+          </div>
+          {/* 수업 유형 */}
+          <CourseLessonForm />
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           {/* 회차여부 */}
           <CourseType />
           <p className="p-2 text-(--mt-blue) bg-(--mt-blue-light) rounded-md">
@@ -82,6 +110,7 @@ export default function CreateCourse() {
           </p>
         </CreateCourseCard>
 
+<<<<<<< HEAD
         <CreateCourseCard>
           <CourseRefundPolicy />
         </CreateCourseCard>
@@ -104,6 +133,34 @@ export default function CreateCourse() {
           <p className="text-red-500 text-center">업로드에 실패하였습니다.</p>
         )}
       </CreateCourseCard>
+=======
+        <CreateCourseCard classNames="[&>h5]:font-bold">
+          <CourseDifficulty />
+          <CourseDogSize />
+        </CreateCourseCard>
+
+        <CreateCourseCard classNames="[&>label]:font-bold">
+          <CourseDescription />
+        </CreateCourseCard>
+        <CreateCourseCard classNames="[&>label]:font-bold">
+          <CourseRefundPolicy />
+        </CreateCourseCard>
+
+        <CreateCourseCard classNames="[&>label]:font-bold">
+          <CourseSchedule />
+        </CreateCourseCard>
+
+        <CreateCourseCard classNames="[&>label]:font-bold">
+          <CourseItems />
+        </CreateCourseCard>
+      </fieldset>
+      <button
+        type="submit"
+        className="w-full bg-(--mt-blue-point) py-2 rounded-lg shadow text-(--mt-white) font-bold"
+      >
+        개설하기
+      </button>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
     </form>
   );
 }

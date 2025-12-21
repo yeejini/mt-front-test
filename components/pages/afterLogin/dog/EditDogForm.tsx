@@ -19,10 +19,15 @@ export default function EditDogForm({ dogId }: { dogId: number }) {
     previewUrl,
     fileError,
     isUploading,
+<<<<<<< HEAD
     isDeleted,
     fileInputRef,
     handleFileSelect,
     handleImageDelete,
+=======
+    fileInputRef,
+    handleFileSelect,
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
     uploadImage,
     cleanup,
   } = useDogImageUpload();
@@ -37,6 +42,7 @@ export default function EditDogForm({ dogId }: { dogId: number }) {
       try {
         const uploadedImageKey = await uploadImage();
 
+<<<<<<< HEAD
         const updateData: IDogUpdateRequestType = {};
 
         // 필수 필드 - 비어있지 않을 때만 추가
@@ -102,17 +108,40 @@ export default function EditDogForm({ dogId }: { dogId: number }) {
         if (isDeleted) {
           updateData.profileImage = ""; // 빈 문자열 전송 → 백엔드에서 NULL 처리
         } else if (uploadedImageKey) {
+=======
+        const updateData: IDogUpdateRequestType = {
+          name: formData.get("name") as string,
+          breed: formData.get("breed") as string,
+          age: Number(formData.get("age")),
+          gender: formData.get("gender") as "M" | "F",
+          isNeutered: formData.get("isNeutered") === "true",
+          weight: Number(formData.get("weight")),
+          personality: formData.get("personality") as string,
+          habits: formData.get("habits") as string,
+          healthInfo: formData.get("healthInfo") as string,
+        };
+
+        if (uploadedImageKey) {
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           updateData.profileImage = uploadedImageKey;
         }
 
         await mutateAsync({ dogId, dogData: updateData });
         cleanup();
         router.push(`/mydogs/${dogId}`);
+<<<<<<< HEAD
       } catch {
         setError("반려견 정보 수정에 실패했습니다. 다시 시도해주세요.");
       }
     },
     [uploadImage, mutateAsync, cleanup, router, dogId, isDeleted]
+=======
+      } catch (err) {
+        setError("반려견 정보 수정에 실패했습니다. 다시 시도해주세요.");
+      }
+    },
+    [uploadImage, mutateAsync, cleanup, router, dogId]
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   );
 
   if (isLoading) {
@@ -128,7 +157,11 @@ export default function EditDogForm({ dogId }: { dogId: number }) {
       <div className="bg-white w-full h-full m-auto p-6 rounded-md flex flex-col items-center justify-center gap-4">
         <p className="text-(--mt-gray)">반려견 정보를 불러올 수 없습니다.</p>
         <button
+<<<<<<< HEAD
           onClick={() => router.push("/mydogs")}
+=======
+          onClick={() => router.back()}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           className="py-2 px-6 bg-(--mt-blue-point) text-(--mt-white) rounded-xl font-bold"
         >
           돌아가기
@@ -153,10 +186,15 @@ export default function EditDogForm({ dogId }: { dogId: number }) {
           fileInputRef={fileInputRef}
           fileError={fileError}
           isDisabled={isPending || isUploading}
+<<<<<<< HEAD
           isDeleted={isDeleted}
           onFileSelect={handleFileSelect}
           onButtonClick={() => fileInputRef.current?.click()}
           onImageDelete={handleImageDelete}
+=======
+          onFileSelect={handleFileSelect}
+          onButtonClick={() => fileInputRef.current?.click()}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         />
 
         <DogFormFields defaultValues={dogData} />
@@ -166,7 +204,11 @@ export default function EditDogForm({ dogId }: { dogId: number }) {
         <div className="flex gap-3 sticky bottom-0 bg-white pt-2 pb-2">
           <button
             type="button"
+<<<<<<< HEAD
             onClick={() => router.push(`/mydogs/${dogId}`)}
+=======
+            onClick={() => router.back()}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
             className="flex-1 py-3 border border-(--mt-gray-light) text-(--mt-gray) rounded-xl font-bold"
           >
             취소

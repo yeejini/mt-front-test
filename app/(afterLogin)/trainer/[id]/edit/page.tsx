@@ -5,9 +5,17 @@ import TrainerEditForm from "@/components/pages/afterLogin/trainer/trainerEdit/T
 import { ITrainerInfoType } from "@/types/trainer/trainerType";
 
 async function getTrainerInfo(id: string) {
+<<<<<<< HEAD
   const res = await fetch(`${API_BASE_URL}/users/trainer/${id}`, {
     method: "GET",
     headers: {
+=======
+  const cookie = await cookies();
+  const res = await fetch(`${API_BASE_URL}/users/trainer/${id}`, {
+    method: "GET",
+    headers: {
+      cookie: cookie.toString(),
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       "Content-Type": "application/json",
     },
   });

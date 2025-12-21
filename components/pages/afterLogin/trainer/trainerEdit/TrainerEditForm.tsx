@@ -225,7 +225,6 @@ export default function TrainerEditForm({
           <input
             type="email"
             name="email"
-            disabled
             value={formData.email}
             onChange={handleChange}
             className="w-full p-3 border border-(--mt-gray-light) rounded-lg focus:outline-none focus:ring-2 focus:ring-(--mt-blue-point)"

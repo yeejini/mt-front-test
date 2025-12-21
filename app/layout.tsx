@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import type { Metadata } from "next";
 import { Do_Hyeon, Nanum_Gothic } from "next/font/google";
+=======
+import type {Metadata} from "next";
+import {Do_Hyeon, Nanum_Gothic} from "next/font/google";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 import "./globals.css";
 import GlobalNav from "@/components/shared/globalNav/GlobalNav";
 import HeaderBar from "@/components/shared/header/HeaderBar";

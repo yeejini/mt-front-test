@@ -9,8 +9,12 @@ import { ITrainerInfoType } from "@/types/trainer/trainerType";
 import useCheckLoggedIn from "./../../../../../hooks/afterLogin/users/useCheckLoggedIn";
 
 export default function UserInfoCard({ user }: { user: ITrainerInfoType }) {
+<<<<<<< HEAD
   const { checkIsOwner } = useCheckLoggedIn();
   const isOwner = checkIsOwner(user.trainerId);
+=======
+  const { data } = useCheckLoggedIn();
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   return (
     <div className="bg-white rounded-lg border border-(--mt-gray-light) p-6 space-y-6">
       <div className="flex flex-col items-center gap-4">
@@ -31,7 +35,11 @@ export default function UserInfoCard({ user }: { user: ITrainerInfoType }) {
             </div>
           )}
         </div>
+<<<<<<< HEAD
         {isOwner && (
+=======
+        {data?.userId === user.trainerId && (
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           <Link
             href={`/trainer/${user.trainerId}/edit`}
             className="text-sm text-(--mt-blue-point) font-medium hover:underline"

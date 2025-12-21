@@ -1,17 +1,24 @@
+<<<<<<< HEAD
 "use client";
 
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 import Image from "next/image";
 import { ITrainerInfoType } from "@/types/trainer/trainerType";
 import TagBadges from "@/components/shared/badges/TagBadges";
 import { CheckBadgeIcon } from "@/components/icons/badges";
+<<<<<<< HEAD
 import { useState } from "react";
 import useCheckLoggedIn from "@/hooks/afterLogin/users/useCheckLoggedIn";
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 
 export default function TrainerDetailCard({
   trainer,
 }: {
   trainer: ITrainerInfoType;
 }) {
+<<<<<<< HEAD
   const { checkIsOwner } = useCheckLoggedIn();
   const [copied, setCopied] = useState(false);
   const isOwner = checkIsOwner(trainer.trainerId);
@@ -28,6 +35,8 @@ export default function TrainerDetailCard({
     }
   };
 
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   return (
     <section className="space-y-4">
       {/* 경력 사항 */}
@@ -119,6 +128,7 @@ export default function TrainerDetailCard({
             <h3 className="font-bold text-(--mt-black)">훈련 스타일</h3>
           </div>
           <div className="flex flex-wrap gap-2">
+<<<<<<< HEAD
             {[trainer.style, trainer.tag]
               .filter(Boolean)
               .map((item, idx) =>
@@ -132,6 +142,15 @@ export default function TrainerDetailCard({
                     />
                   ))
               )}
+=======
+            {[trainer.style, trainer.tag].filter(Boolean).map((item, idx) => (
+              <TagBadges
+                key={idx}
+                classNames="bg-(--mt-orange-smoke) text-(--mt-orange-point) text-sm font-medium"
+                txt={item}
+              />
+            ))}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           </div>
         </div>
       )}
@@ -156,6 +175,7 @@ export default function TrainerDetailCard({
           </div>
         </div>
       )}
+<<<<<<< HEAD
       {trainer.registCode && isOwner && (
         <div className="bg-white rounded-lg border border-(--mt-gray-light) p-5">
           <div className="flex items-center gap-2 mb-4">
@@ -236,6 +256,8 @@ export default function TrainerDetailCard({
           </div>
         </div>
       )}
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
     </section>
   );
 }

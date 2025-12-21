@@ -10,7 +10,11 @@ export default function CourseLessonForm() {
   const privateRef = useRef<HTMLInputElement | null>(null);
 
   return (
+<<<<<<< HEAD
     <div className="flex flex-col gap-2">
+=======
+    <div className="flex flex-col gap-2 ">
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       <h5 className="font-bold">수업 형태</h5>
       <div className="flex justify-between gap-3 [&>div]:w-full [&>div]:flex [&>div]:items-center [&>div]:gap-2">
         <CourseTypeBtn

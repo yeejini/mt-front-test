@@ -20,6 +20,7 @@ export async function fetchWithAuth(
 ) {
   try {
     let res = await fetchData(input, init);
+<<<<<<< HEAD
 
     // 성공 응답은 바로 반환
     if (res.ok) {
@@ -49,6 +50,29 @@ export async function fetchWithAuth(
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;
+=======
+    if (res.status === 400) {
+      return res.json();
+    }
+    const result = await res.json();
+    if (res.status === 401) {
+      if (result.code === TOKEN_EXPIRED) {
+        await refreshToken();
+        res = await fetchData(input, init);
+      }
+      if (result.code === REFRESH_EXPIRED || result.code === UNAUTHORIZED) {
+        window.location.href = "/login";
+      }
+    }
+
+    if (!res.ok) {
+      window.location.href = "/login";
+    }
+
+    return res;
+  } catch {
+    window.location.href = "/login";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   }
 }
 

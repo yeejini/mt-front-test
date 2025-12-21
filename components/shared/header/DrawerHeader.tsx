@@ -13,8 +13,13 @@ export default function DrawerHeader() {
   // functions
   /* 로그인페이지 이동 */
   const goToLogin = () => {
+<<<<<<< HEAD
     offToggle();
     router.push("/login");
+=======
+    router.push("/login");
+    offToggle();
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   };
   const handleLogout = async () => {
     await refetch();
@@ -22,7 +27,10 @@ export default function DrawerHeader() {
     offToggle();
     router.push("/");
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   return (
     <>
       <li>
@@ -32,6 +40,7 @@ export default function DrawerHeader() {
           </i>
         </button>
       </li>
+<<<<<<< HEAD
       {check && "userId" in check ? (
         <li>
           <button
@@ -42,6 +51,9 @@ export default function DrawerHeader() {
           </button>
         </li>
       ) : (
+=======
+      {!check ? (
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         <li>
           <button
             onClick={goToLogin}
@@ -50,6 +62,18 @@ export default function DrawerHeader() {
             로그인
           </button>
         </li>
+<<<<<<< HEAD
+=======
+      ) : (
+        <li>
+          <button
+            onClick={handleLogout}
+            className="bg-(--mt-white) px-2 py-1 rounded-lg font-semibold text-sm hover:bg-(--mt-blue-light) hover:outline-2 hover:outline-(--mt-blue-point) transition-colors ease-in-out duration-200"
+          >
+            로그아웃
+          </button>
+        </li>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       )}
     </>
   );

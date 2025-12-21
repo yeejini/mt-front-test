@@ -4,6 +4,10 @@ import {EyeIcon, EyeSlashIcon} from "@/components/icons/eye";
 import {LockClosedIcon} from "@/components/icons/lock";
 import {UserIcon} from "@/components/icons/user";
 import AuthInput from "@/components/shared/inputs/AuthInput";
+<<<<<<< HEAD
+=======
+import useCheckLoggedIn from "@/hooks/afterLogin/users/useCheckLoggedIn";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 import useLogin from "@/hooks/beforeLogin/login/useLogin";
 import {loginSchema} from "@/schemas/loginSchema";
 import {ZodErrorTree} from "@/types/formResultType";
@@ -43,7 +47,10 @@ export default function LoginForm() {
     });
     reset();
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   return (
     <form
       onSubmit={handleFormAction}

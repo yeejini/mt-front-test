@@ -1,15 +1,20 @@
 "use client";
 
 import { useState } from "react";
+<<<<<<< HEAD
 import { DogIcon } from "@/components/icons/dog";
 import { CakeIcon } from "@/components/icons/cake";
 import { MaleIcon, FemaleIcon } from "@/components/icons/gender";
 import { CheckIcon } from "@/components/icons/check";
+=======
+import { UserIcon } from "@/components/icons/user";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 import useDogDetail from "@/hooks/afterLogin/dogs/useDogDetail";
 import useDeleteDog from "@/hooks/afterLogin/dogs/useDeleteDog";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD
 import type { SocializationLevel } from "@/types/dog/dogType";
 
 import ErrorMessage from "@/components/shared/feedback/ErrorMessage";
@@ -34,6 +39,11 @@ function getSocializationLevelText(level: SocializationLevel): string {
       return "알 수 없음";
   }
 }
+=======
+
+import ErrorMessage from "@/components/shared/feedback/ErrorMessage";
+import ConfirmModal from "@/components/shared/modal/ConfirmModal";
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 
 export default function DogDetail({ dogId }: { dogId: number }) {
   const router = useRouter();
@@ -75,7 +85,11 @@ export default function DogDetail({ dogId }: { dogId: number }) {
       <div className="bg-white w-full h-full m-auto p-6 rounded-md flex flex-col items-center justify-center gap-4">
         <p className="text-(--mt-gray)">반려견 정보를 불러올 수 없습니다.</p>
         <button
+<<<<<<< HEAD
           onClick={() => router.push("/mydogs")}
+=======
+          onClick={() => router.back()}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           className="py-2 px-6 bg-(--mt-blue-point) text-(--mt-white) rounded-xl font-bold"
         >
           돌아가기
@@ -105,6 +119,7 @@ export default function DogDetail({ dogId }: { dogId: number }) {
               backgroundColor: `hsl(${(data.dogId * 137.5) % 360}, 70%, 80%)`,
             }}
           >
+<<<<<<< HEAD
             <DogIcon className="size-16 text-white" />
           </div>
         )}
@@ -139,6 +154,15 @@ export default function DogDetail({ dogId }: { dogId: number }) {
             <span>{data.isNeutered ? "중성화 완료" : "중성화 미완료"}</span>
           </span>
         </div>
+=======
+            <UserIcon className="size-16 text-white" />
+          </div>
+        )}
+        <h2 className="font-bold text-xl">{data.name}</h2>
+        <p className="text-(--mt-gray)">
+          {data.breed} · {data.age}살 · {data.gender === "M" ? "수컷" : "암컷"}
+        </p>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       </div>
 
       <div className="flex flex-col gap-3 [&>div>span]:border [&>div>span]:border-(--mt-gray-light) [&>div>span]:p-2 [&>div>span]:rounded-md [&>div>h3]:font-bold [&>div>h3]:text-(--mt-black)">
@@ -146,6 +170,7 @@ export default function DogDetail({ dogId }: { dogId: number }) {
           <h3>견종</h3>
           <span>{data.breed}</span>
 
+<<<<<<< HEAD
           {data.weight !== undefined && data.weight !== null && (
             <>
               <h3>체중</h3>
@@ -179,6 +204,25 @@ export default function DogDetail({ dogId }: { dogId: number }) {
               <span className="whitespace-pre-wrap">{data.healthInfo}</span>
             </>
           )}
+=======
+          <h3>나이</h3>
+          <span>{data.age}살</span>
+
+          <h3>성별</h3>
+          <span>{data.gender === "M" ? "수컷" : "암컷"}</span>
+
+          <h3>체중</h3>
+          <span>{data.weight}kg</span>
+
+          <h3>성격</h3>
+          <span className="whitespace-pre-wrap">{data.personality}</span>
+
+          <h3>습관 및 특징</h3>
+          <span className="whitespace-pre-wrap">{data.habits}</span>
+
+          <h3>건강 정보</h3>
+          <span className="whitespace-pre-wrap">{data.healthInfo}</span>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         </div>
       </div>
 
@@ -202,7 +246,11 @@ export default function DogDetail({ dogId }: { dogId: number }) {
       </div>
 
       <button
+<<<<<<< HEAD
         onClick={() => router.push("/mydogs")}
+=======
+        onClick={() => router.back()}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         className="border text-(--mt-gray) py-3 rounded-md font-bold"
       >
         돌아가기
@@ -212,7 +260,11 @@ export default function DogDetail({ dogId }: { dogId: number }) {
       <ConfirmModal
         isOpen={showDeleteConfirm}
         title="반려견 삭제"
+<<<<<<< HEAD
         message={<DogDeleteConfirm name={data?.name} />}
+=======
+        message={`정말로 <span class="font-bold text-(--mt-black)">${data?.name}</span>의 정보를 삭제하시겠습니까?`}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         confirmText="삭제"
         cancelText="취소"
         confirmButtonClass="bg-red-500 text-white"
@@ -220,8 +272,11 @@ export default function DogDetail({ dogId }: { dogId: number }) {
         onCancel={handleDeleteCancel}
         isLoading={isDeleting}
         loadingText="삭제 중..."
+<<<<<<< HEAD
         requireInput={data?.name}
         inputPlaceholder={`반려견 이름 입력`}
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       />
     </div>
   );

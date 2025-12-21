@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import PlanTabs from "./PlanTabs";
 import PlanCourseList from "./PlanCourseList";
 import {useState} from "react";
@@ -86,6 +87,19 @@ export default function Plan({
       <PlanTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <PlanCourseList courses={courses} />
       <PlanFloatingBtn />
+=======
+"use client";
+import Calendar from "@/components/shared/calendar/Calendar";
+import useCheckLoggedIn from "@/hooks/afterLogin/users/useCheckLoggedIn";
+import PlanFloatingBtn from "./PlanFloatingBtn";
+
+export default function Plan() {
+  const {data} = useCheckLoggedIn();
+  return (
+    <div className="relative w-full h-full bg-(--mt-white) p-6 rounded-md flex flex-col gap-3 ">
+      <Calendar />
+      <PlanFloatingBtn role={data?.role} />
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
     </div>
   );
 }

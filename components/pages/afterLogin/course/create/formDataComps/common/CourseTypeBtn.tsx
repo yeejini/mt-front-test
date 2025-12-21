@@ -22,7 +22,11 @@ export default function CourseTypeBtn({
 }: ICourseTypeBtnProps) {
   const id = useId();
   return (
+<<<<<<< HEAD
     <div className="w-full">
+=======
+    <div>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       <label
         htmlFor={`${id}_${labelFor}`}
         onClick={handleFn}
@@ -30,7 +34,11 @@ export default function CourseTypeBtn({
           isActive
             ? "bg-(--mt-blue-point) text-(--mt-white)"
             : "border border-(--mt-gray) bg-(--mt-gray-light) text-(--mt-gray)"
+<<<<<<< HEAD
         } flex items-center justify-center p-2 rounded-md w-full text-center`}
+=======
+        } block p-2 rounded-md w-full text-center`}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       >
         {labelTxt}
       </label>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import Plan from "@/components/pages/afterLogin/plan/Plan";
@@ -67,3 +68,10 @@ const PlanPage = () => {
 };
 
 export default PlanPage;
+=======
+import Plan from "@/components/pages/afterLogin/plan/Plan";
+
+export default function Page() {
+  return <Plan />;
+}
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451

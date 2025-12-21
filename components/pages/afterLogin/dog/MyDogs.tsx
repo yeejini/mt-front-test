@@ -27,6 +27,7 @@ export default function MyDogs() {
       {/* 헤더 */}
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-(--mt-black)">나의 반려견</h1>
+<<<<<<< HEAD
         {/* 반려견이 있을 때만 헤더에 추가 버튼 표시 */}
         {dogs && dogs.length > 0 && (
           <Link
@@ -36,6 +37,14 @@ export default function MyDogs() {
             + 반려견 추가
           </Link>
         )}
+=======
+        <Link
+          href="/mydogs/create"
+          className="px-4 py-2 bg-(--mt-blue-point) text-(--mt-white) rounded-xl font-bold shadow-md"
+        >
+          + 반려견 추가
+        </Link>
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       </div>
 
       {/* 반려견 리스트 */}

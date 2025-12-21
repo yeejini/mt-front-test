@@ -17,7 +17,10 @@ export default function Calendar() {
   const totalDays = lastDay.getDate();
   const calendar: (number | null)[][] = [];
   let week: (number | null)[] = [];
+<<<<<<< HEAD
   
+=======
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
   for (let i = 0; i < startWeek; i++) {
     week.push(null);
   }

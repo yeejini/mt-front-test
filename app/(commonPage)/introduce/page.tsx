@@ -7,7 +7,11 @@ export const metadata = {
 
 export default function IntroducePage() {
   return (
+<<<<<<< HEAD
     <div className="bg-(--mt-white) rounded-md h-full p-6 flex flex-col items-center gap-6 overflow-y-scroll">
+=======
+    <div className="bg-(--mt-white) rounded-md h-full p-6 flex flex-col items-center gap-6">
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
       <section className="flex size-72 justify-center bg-(--mt-blue) rounded-full">
         <Image src={logo_slogun} alt="멍선생 프로필" width={150} height={150} />
       </section>

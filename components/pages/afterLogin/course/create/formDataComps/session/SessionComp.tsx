@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import {IUploadCourseTypes} from "@/types/course/courseType";
@@ -27,4 +28,8 @@ export default function SessionComp({count}: {count: number}) {
       ))}
     </div>
   );
+=======
+export default function SessionComp() {
+  return <div></div>;
+>>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
 }
