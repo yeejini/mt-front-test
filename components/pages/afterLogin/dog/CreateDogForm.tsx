@@ -19,10 +19,7 @@ export default function CreateDogForm() {
     isUploading,
     fileInputRef,
     handleFileSelect,
-<<<<<<< HEAD
     handleImageDelete,
-=======
->>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
     uploadImage,
     cleanup,
   } = useDogImageUpload();
@@ -37,7 +34,6 @@ export default function CreateDogForm() {
       try {
         const uploadedImageUrl = await uploadImage();
 
-<<<<<<< HEAD
         // 선택 필드 trim 처리
         const weight = formData.get("weight") as string;
         const personality = (formData.get("personality") as string)?.trim();
@@ -46,15 +42,11 @@ export default function CreateDogForm() {
 
         const dogData: IDogCreateRequestType = {
           // 필수값
-=======
-        const dogData: IDogCreateRequestType = {
->>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
           name: (formData.get("name") as string) || "",
           breed: (formData.get("breed") as string) || "",
           age: Number(formData.get("age") || 0),
           gender: (formData.get("gender") as "M" | "F") || "M",
           isNeutered: formData.get("isNeutered") === "true",
-<<<<<<< HEAD
           humanSocialization:
             (formData.get("humanSocialization") as "LOW" | "MEDIUM" | "HIGH") ||
             "MEDIUM",
@@ -69,23 +61,12 @@ export default function CreateDogForm() {
           ...(habits && { habits }),
           ...(healthInfo && { healthInfo }),
           ...(uploadedImageUrl && { profileImage: uploadedImageUrl }),
-=======
-          weight: Number(formData.get("weight") || 0),
-          personality: (formData.get("personality") as string) || "",
-          habits: (formData.get("habits") as string) || "",
-          healthInfo: (formData.get("healthInfo") as string) || "",
-          profileImage: uploadedImageUrl || undefined,
->>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         };
 
         await mutateAsync(dogData);
         cleanup();
         router.push("/mydogs");
-<<<<<<< HEAD
       } catch {
-=======
-      } catch (err) {
->>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         setError("반려견 등록에 실패했습니다. 다시 시도해주세요.");
       }
     },
@@ -106,10 +87,7 @@ export default function CreateDogForm() {
           isDisabled={isPending || isUploading}
           onFileSelect={handleFileSelect}
           onButtonClick={() => fileInputRef.current?.click()}
-<<<<<<< HEAD
           onImageDelete={handleImageDelete}
-=======
->>>>>>> 98d76b17b73947c8b46b0ee0435e5aa1550db451
         />
 
         <DogFormFields />
